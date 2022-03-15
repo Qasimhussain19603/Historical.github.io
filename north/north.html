@@ -1,0 +1,1048 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />	
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		
+<title>North</title>
+</head>
+	<style>
+	* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+nav{
+	background: black;
+}
+nav:after{
+	content: '';
+	clear: both;
+	display: table;
+}
+.logo {
+   
+   
+    float: left;
+	color: white;
+	font-size: 30px;
+	font-weight: 600;
+	line-height: 70px;
+	padding-left: 30px;
+    
+}
+.logo img{
+	width: 160px;
+    float: left;
+	line-height: 70px;
+	padding-left: 30px;
+    
+}
+nav ul{
+	float: right;
+	list-style: none;
+	margin-right: 40px;
+	position: relative;
+	
+}
+nav ul li{
+	float: left;
+	display: inline-block;
+	background: black;
+	margin: 0 5px;
+}
+nav ul li a{
+	color: white;
+	text-decoration: none;
+	line-height: 70px;
+	font-size: 20px; 
+	padding: 8px 15px;
+}
+nav ul li a:hover{
+	color: cyan;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #33ffff,
+	            0 0 5px #66ffff;
+}
+nav ul ul li a:hover{
+	color: cyan;
+	box-shadow: none;
+}
+nav ul ul{
+	position: absolute;
+	top: 90px;
+	border-top: 3px solid cyan;
+	opacity: 0;
+	visibility: hidden;
+	transition: top .3s;
+}
+nav ul li:hover > ul{
+	top: 70px;
+	opacity: 1;
+	visibility: visible;
+}
+
+nav ul ul li{
+	position: relative;
+	margin: 0px;
+	width: 120px;
+	float: none;
+	display: list-item;
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+nav ul ul li a{
+	line-height: 50px;
+}
+.active,.icon, input{
+	display: none;
+}
+@media all and (max-width: 968px) {
+	nav ul{
+		margin-right: 0px;
+		float: left;
+	}
+	.logo{
+		padding-left: 30px;
+		width: 100%;
+	}
+	.logo img{
+		padding-left: 30px;
+		width: 60%;
+	}
+	nav ul li, nav ul ul li{
+		display: block;
+		width: 100%;
+	}
+	nav ul ul{
+		top: 70px;
+		position: static;
+		border-top: none;
+		float: none;
+		
+		opacity: 1;
+		visibility: visible;
+	}
+	nav ul ul li{
+		border-bottom: 0px;
+	}
+	nav ul ul a{
+		padding-left: 40px;
+		
+	}
+	.active{
+		display: block;
+		color: white;
+		font-size: 18px;
+		padding: 0 20px;
+		line-height: 70px;
+		cursor: pointer;
+	}
+	.show:hover{
+		color: cyan;
+	}
+	.icon{
+		display: block;
+		color: white;
+		position: absolute;
+		right: 40px;
+		line-height: 70px;
+		font-size: 25px;
+		cursor: pointer;
+	}
+	nav ul li a:hover{
+		box-shadow: none;
+		
+	}
+
+.active + a, ul{
+	display: none;
+}
+[id^=btn]:checked + ul{
+	display: block;
+}
+	}
+		hr{
+	background: black;
+	border: 1px solid black;
+}
+.site-footer{
+		background-color: black;
+		padding: 45px 0 20px;
+		font-size: 18px;
+		line-height: 24px;
+		color: white;
+		border-radius: 12px;
+		box-shadow: 0 10px 20px;
+		
+		
+	}
+	.site-footer hr{
+		border-top-color: burlywood;
+		opacity: 0.5;
+	}
+	.site-footer hr.small{
+		margin: 20px 0;
+	}
+	.site-footer h6{
+		color: burlywood;
+		font-size: 22px;
+		text-transform: uppercase;
+		margin-top: 5px;
+		letter-spacing: 2px;
+	}
+	.site-footer a{
+		color: white;
+	}
+	.site-footer a:hover{
+		color: cyan;
+		text-decoration: none;
+	}
+	.footer-links{
+		padding: left;
+		list-style: none;
+	}
+	
+	.footer-links a{
+		color: white;
+		font-size: 18px;
+	}
+	
+	.footer-links a:hover,
+	.footer-links a:active,
+	.footer-links a:focus{
+		color: cyan;
+		text-decoration: none;
+	}
+	.footer-links p{
+		color: white;
+		font-size: 18px;
+	}
+	.footer-links p:hover,
+	.footer-links p:active,
+	.footer-links p:focus{
+		color: cyan;
+		text-decoration: none;
+	}
+	
+	
+	.site-footer .socail-icons{
+		text-align: right;
+	}
+	.site-footer .socail-icons a{
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		margin-left: 6px;
+		margin-right: 0;
+		border-radius: 100%;
+		background-color: #33353d;
+	}
+	.copyright-text{
+		margin: 0;
+	}
+	@media (max-width: 991px) {
+		.site-footer [class^="col-"] {
+			margin-bottom: 30px;
+		}
+	}
+	@media (max-width: 767px){
+		.site-footer{
+			padding-bottom: 0;
+		}
+		.site-footer .copyright-text,
+		.site-footer .social-icons {
+			text-align: center;
+		}
+		
+	}
+	.social-icons{
+		padding-left: 0;
+		margin-bottom: 0;
+		list-style: none;
+	}
+	
+	.social-icons a{
+		background-color: #eceeef;
+		color: #818a91;
+		font-size: 22px;
+		display: inline-block;
+		line-height: 48px;
+		width: 48px;
+		height: 48px;
+		text-align: center;
+		margin-right: 8px;
+		border-radius: 100%;
+		-webkit-transition: all 0.2 linear;
+		transition: all 0.2 linear;
+	}
+	.social-icons a:active,
+	.social-icons a:hover,
+	.social-icons a:focus{
+		color: white;
+		background-color: #29aafe;
+	}
+	.social-icons a.facebook:hover{
+		background-color: #3b5998;
+	}
+	.social-icons a.twitter:hover{
+		background-color: #00aced;
+	}
+	.social-icons a.instagram:hover{
+		background-color: #EA4CD0;
+	}
+	.social-icons a.whatsapp:hover{
+		background-color: #1BEC4D;
+	}
+	.social-icons a.gmail:hover{
+		background-color: #D82B2E;
+	}
+					
+
+	
+	
+	
+	
+	
+	</style>
+
+<body style="background: bisque">
+	 <nav>
+	<div class="logo"><img src="logo.png" alt="logo" class="logo">Historical Monuments</div>
+	  <label for="btn" class="icon">
+	  <span class="fa fa-bars"></span>
+	  </label>
+	  <input type="checkbox" id="btn">
+	  <ul>
+                    <li>
+                        <a href="../home.html">Home <i class="fa fa-home"></i></a>
+                    </li>
+		  <li>
+			  <label for="btn1" class="active">Zone Categories +</label>
+			  
+                        <a href="#"> Zone Categories</a>
+			  <input type="checkbox" id="btn1">
+                        <ul>
+                        
+                        <li>
+                                <a href="../east/east.html">East</a>
+                            </li>
+                            <li>
+                                <a href="../west/west.html">West</a>
+                            </li>
+                            <li>
+                                <a href="../south/south.html">South</a>
+                            </li>
+                            <li>
+                                <a href="north.html">North</a>
+                            </li>
+                        </ul>
+                    </li>
+		  <li>
+                        <a href="../Gallery.html">Gallery <i class="fa fa-image"></i></a>
+                    </li>
+                    
+                   
+                    <li>
+                        <a href="../aboutus.html">About us <i class="fa fa-users"></i></a>
+                    </li>
+                    <li>
+                        <a href="../Contact us.html">Contact us <i class="fa fa-volume-control-phone"></i></a>
+                    </li>
+                    
+                    
+	  </ul>
+	
+	</nav>
+	<br>
+		<hr>
+	<h1 align="center" style="font-family: 'alexa-std'"><i><b>Historical Monuments Of World(North)</b></i></h1>
+	<hr>
+		<br>
+		<br>
+	<!--Cards-->
+		
+		<!--Ist Row Start-->	
+		
+		<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="hindu temple uganda.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Hindu Temple</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model1">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder1">Hindu Temple</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="hindu temple uganda.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Hindu Temple</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Uganda </p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">Hinduism in Uganda arrived when the colonial British Empire brought Hindus along with other Indian workers to its East African colonies in late 19th and early 20th centuries. The largest arrival of Hindu immigrants to Uganda, some educated and skilled but mostly poor and struggling from the famine-prone areas of Punjab and Gujarat, was to help construct the Kenya-Uganda Railway connecting landlocked parts of Uganda and Kenya with the port city of Mombasa. The largest departure of Hindus from Uganda occurred when General Idi Amin expelled them and seized their properties in 1972.</p>
+			
+			<p class="text-justify">In addition to building major infrastructure projects, Hindus were a part of a global movement of workers to parts of British East Africa, aimed at helping the British government to establish services, retail markets and administrative support. The British invited Indian laborers as local skilled labor was unavailable. At the peak of the infrastructure projects in Uganda-Kenya, 32,000 people were brought in from India. Nearly 2,500 workers died because of difficult and unsafe working conditions during these projects. After the project ended, nearly 70% of the workers returned to India, while some 6,000 were absorbed in railway and other British operations such as retail and administration. Those who remained included Hindus, Muslims, Jains and Sikhs. Many from this ethnic group became financially successful.</p>
+
+		
+
+
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/north.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+			</div>
+		<!--Card 1 Complete-->
+		
+		<!--Card 2nd Started-->
+		
+				<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="Abhayagiriya_Stupa_view1 srilanka.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+
+			<h3 align="center">Abhayagiri </h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model2">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder2">Abhayagiri </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="Abhayagiriya_Stupa_view1 srilanka.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Abhayagiri</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Anuradhapura,Sri Lanka</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">Abhayagiriya Stupa is located in the sacred city of Anuradhapura. It is the second-largest Stupa in Sri Lanka. This large Stupa belongs to the Abhayagiri monastery. King Walagamba (also known as ‘Wattagamini Abhaya’ ) has built this Stupa during the 1st century BC. Since this Stupa is sacred to the Buddhists, it is a place that belongs to both ‘Atamasthana‘ and ‘Solosmasthana.’</p>
+			
+			<p class="text-justify">Due to the values of its natural resources and its location, Sri Lanka has faced several invasions over the years. According to the legends, soon prince Walagamba ascended to be King, Tamil (South Indian) invasion took place. The new King Walagamba could not be resistant to this invasion. Therefore, he fallback and fled for safety. While he was fleeing, one of ‘Jain’ monk (his name was ‘Giri’) shouted, “Look, the great black Sinhala king is fleeing” as an insult. As a wise king, he ignored this comment at the moment, but never forget.</p>
+			
+			  
+
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/north.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+		</div>
+		<!--Card 2 Complete-->
+		
+		<!--card 3 started-->
+					
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="Ogbunike_cave nigeria.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Ogbunike Cave</h3>
+			<hr>
+          <p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model3">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder3">Ogbunike Cave</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="Ogbunike_cave nigeria.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Ogbunike Cave</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Ogbunike, Nigeria</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The Ogbunike Caves are located in Ogbunike, Anambra State, southeastern Nigeria.
+			Located in a valley blanketed by tropical rain forest, the collection of caves has been in use over centuries by local people for whom it has particular spiritual significance. This spiritual significance is still apparent, as the "Ime Ogba" celebration is undertaken every year to commemorate the discovery of the caves.</p>
+			<p class="text-justify">Descending into the valley where the caves are located is a lengthy walkway made up of about 317 steps said to have been constructed by the Anambra State Government in the mid 90s. Visitors must remove their shoes before entering the caves, as per tradition. And women who are having their monthly cycle cannot go in.</p>
+
+		 
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/north.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>	
+	</div>
+		
+</div>
+			</div>
+		<!--Card 3 Complete-->
+		
+
+	
+		
+	 <!--Ist row container finish-->
+		<div class="container">
+	<div class="row py-5">
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="Democracy_monument Thailand.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Demo Monument</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Demo Monument</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="Democracy_monument Thailand.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Demo Monument</h3>	
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Bangkok, Thailand</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The Democracy Monument is a public monument in the city center of Bangkok, capital of Thailand. It occupies a traffic circle on the wide east-west Ratchadamnoen Avenue, at the intersection of Dinso Road. The monument is roughly halfway between Sanam Luang, the former royal cremation ground in front of Wat Phra Kaew, and the temple of the Golden Mount.The monument was commissioned in 1939 to commemorate the 1932 Siamese coup d'état (also called "Siamese Revolution of 1932" or just "1932 Revolution") which led to the establishment of a constitutional monarchy in what was then the Kingdom of Siam, by its military ruler, Field Marshal Plaek Phibunsongkhram. Phibun saw the monument as the focal point of what he envisaged as a new, Westernized Bangkok, "making Thanon [road] Ratchadamnoen the Champs-Élysées and the Democracy Monument the Arc de Triomphe" of Bangkok. 
+
+</p>
+<p class="text-justify">The monument was designed by Maeo Aphaiwong, an architect whose brother, Khuang Aphaiwong, was a leading member of Phibun's government. The Italian sculptor Corrado Feroci, who became a Thai citizen and used the Thai name Silpa Bhirasi from the Second World War on, initially to avoid Japanese military ire, executed the relief sculptures around the base of the monument. He also provided the main sculpting for the renowned Lady Mo monument in the northeast Thailand city of Nakhon Ratchasima.
+
+The building of the monument was highly unpopular at the time. Local residents and shopkeepers (mostly Chinese) were evicted from their homes and businesses with 60 days' notice. The widening of Ratchadamnoen Road to create a ceremonial boulevard involved cutting down hundreds of shade trees, a serious matter in the days before air conditioning, given Bangkok's torrid climate.</p></div>
+		  
+		</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+		  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/north.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+		</div>
+		
+		
+		<!--Card 1 Complete-->
+		
+		<!--Card 2 Started-->
+		
+<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="fort jesus kenya.jpg" alt="" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Fort Jesus</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model5">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder5">Fort Jesus</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="fort jesus kenya.jpg" alt="" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Fort Jesus</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Mombasa KE, Kenya </p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">Fort Jesus (Portuguese: Forte Jesus de Mombaça, Spanish: Fuerte de Jesús) is a fort located on Mombasa Island. Designed by Italian Giovanni Battista Cairati, it was built between 1593 and 1596 by order of King Felipe II of Castille, who also reigned as King Filipe I of Portugal and the Algarves, to guard the Old Port of Mombasa. Fort Jesus was the only fort maintained by the Portuguese on the Swahili coast, and is recognised as a testament to the first successful attempt by a Western power to establish influence over the Indian Ocean trade. </p>
+
+<p class="text-justify">Cairato, the designer of the fort, was inspired by Italian architect Pietro Cataneo, while the master builder was Gaspar Rodrigues. The fort was Cairato's last overseas work. Although the design of Fort Jesus is an example of Renaissance architecture, the masonry techniques, building materials and labour are believed to have been provided by the local Swahili people. The fort was built in the shape of a man (viewed from the air) and is roughly square, with four bulwarks at its corners. The fort is considered a masterpiece of late Renaissance military fortification.
+</p>
+		  
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/north.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+			</div>
+		<!--Card 2 Complete-->
+			<!--card 3 Started-->
+		
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="st george church malaysia.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">George Church</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model6">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder6">George Church</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="st george church malaysia.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">George Church</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center"> Pulau Pinang, Malaysia</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">St. George's Church is a 19th-century Anglican church in the city of George Town in Penang, Malaysia. It is the oldest purpose built Anglican church in Southeast Asia. The church lies within the jurisdiction of the Upper North Archedeaconry of the Anglican Diocese of West Malaysia.After the British East India Company took possession of the island of Penang in 1786, the spiritual care of the colonists was effected by Church of England chaplains attached to the EIC. Early religious services were held at the chapel of Fort Cornwallis and later at the Court House located opposite the present church building. </p>
+			
+			<p class="text-justify">Proposals for the building of a permanent church were submitted as early as 1810 but was only acted upon after the passing of the East India Company Act 1813 (Charter Act) whereby the EIC received a 20-year extension of its charter. Approval was obtained in 1815 to build the church based on the architectural plans drawn up by Major Thomas Anburey but the church was eventually built on the plans drawn up by the Governor of Prince of Wales Island (as Penang was known then), William Petrie, and modified by Lieutenant Robert N. Smith of the Madras Engineers. Smith was a colleague of Colonel James Lillyman Caldwell, the chief architect of St. George's Cathedral in Madras, and the architecture of St. George's Church is believed to be based on the cathedral itself.
+</p>
+			
+x
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/north.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+			</div>
+			
+		<!--Card 3 Complete-->
+		</div>
+	</div> <!--2nd row container finish-->
+	
+		
+		
+		
+		<div class="container">
+			
+			<div class="row">
+				
+	<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="Phra_Sumen_Fort thailand.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center"> Sumen Fort</h3>
+			<hr>
+          <p  align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model7">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+		
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model7" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder7"> Sumen Fort</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="Phra_Sumen_Fort thailand.jpg" style= "width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center"> Sumen Fort</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Bangkok, Thailand</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">Set amongst the peaceful green patch of Santi Chai Prakan Park, the bright white tower of Phra Sumen Fort is one of the original battlements that once surrounded the old city of Rattanakosin. It now stands sentinel, having watched Thai culture change and grow, in the middle of one of Asia’s most thriving and busy cities. Phra Sumen fort is also called Phra Sumeru fort after Mount Meru in Hindu, Jain, and Buddhist cosmology and is considered a national monument.The octagonal stuccoed brick fortification was one of 14 city watchtowers that formerly dotted the old city wall alongside Khlong Rop Krung, now Khlong Banglamphu. Of the 14 original forts, only Phra Sumen Fort and Mahakan Fort now remain.</p>
+			
+<p class="text-justify">When King Rama I ascended to the throne as the first ruler of the Chakri dynasty in 1782, he established Bangkok as the new capital of the Kingdom on the Eastern side of the Chao Phraya river in the Rattanakosin area.
+
+The Burmese had completely destroyed the old capital of Ayutthaya in 1767 so the King had a number of fortifications built and canals dug to protect the new capital. With the Chao Phraya river protecting Rattanakosin in the West, the area was then surrounded by water, hence the name Rattanakosin Island.
+
+
+</p>
+			
+ 		  
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/north.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+       	
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+		</div> 
+				
+		<!--Card 2 Started-->
+		
+<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="wold peace pagoda nepal.jpg" alt="" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Peace Pagoda</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model8">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model8" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder8">Peace Pagoda</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="wold peace pagoda nepal.jpg" alt="" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Peace Pagoda</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Lumbini Sanskritik, Nepal</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">A Peace Pagoda is a Buddhist stupa; a monument to inspire peace, designed to provide a focus for people of all races and creeds, and to help unite them in their search for world peace. Most (though not all) peace pagodas built since World War II have been built under the guidance of Nichidatsu Fujii (1885–1985), a Buddhist monk from Japan and founder of the Nipponzan-Myōhōji Buddhist Order. Fujii was greatly inspired by his meeting with Mahatma Gandhi in 1931 and decided to devote his life to promoting non-violence. In 1947, he began constructing Peace Pagodas as shrines to world peace. The first was inaugurated at Kumamoto in 1954.</p>
+
+<p class="text-justify">Peace Pagodas were built as a symbol of peace in Japanese cities including Hiroshima and Nagasaki where the atomic bombs took the lives of over 150,000 people, almost all of whom were civilian, at the end of World War II. By 2000, eighty Peace Pagodas had been built around the world in Europe, Asia, and the United States.
+
+The Nipponzan-Myōhōji monks of the New England Peace Pagoda were awarded the Courage of Conscience award June 5, 1998 in Sherborn, Massachusetts.
+</p>
+		  
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/north.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+			</div>
+		<!--Card 2 Complete-->
+			<!--card 3 started-->
+					
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="kampung kling mosque malaysia.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">kling mosque</h3>
+			<hr>
+          <p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model9">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder9"> kling mosque</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="kampung kling mosque malaysia.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center"> kling mosque</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Malacca, Malaysia</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">Kampong Kling Mosque (sometimes also spelt Kampong Keling Mosque; Malay: Masjid Kampung Kling; Jawi: is an old mosque in Malacca City, Malacca, Malaysia.
+
+The Kampung Kling Mosque is situated at Jalan Tukang Emas (Goldsmith Street), also known as "Harmony Street" because of its proximity to the Sri Poyatha Moorthi Temple and Cheng Hoon Teng Temple.</p>
+			<p class="text-justify">The architectural design of the mosque is a cross between Sumatran, Chinese, Hindu, and the Melaka Malay. The minaret, ablution pool and entrance arch were built at the same time with the main building. The mosque also has a blend of English and Portuguese glazed tiles, Corinthian columns with symmetrical arches in the main prayer hall, a Victorian chandelier, a wooden pulpit with Hindu and Chinese-style carvings, and Moorish cast iron lamp-posts in the place of ablution for pre-prayer cleansing. The Department of Museums and Antiquities completed conservation works on the mosque in the 1990's.</p>
+
+		  
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/north.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>	
+	</div>
+				</div>	
+	</div>
+	<br>
+	<footer class="site-footer">	
+		<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<h6>About Us</h6>
+				<p class="text-justify">Historical monuments are the cultural heritage of any country.They speak a thousand words about the place, its traditions, and historical significance. Monuments take us to the path of knowing our past and connecting it with the future.
+
+Every country comprises many historical monuments. While some are on the verge of getting destroyed, some are still in their intact form. It mainly depends upon their architectural compliance, grandeur and the way they were made. Today, every country is making efforts to save its historical monuments so that its cultural heritage does not suffer.</p>
+			
+			</div>
+			<div class="col-6 col-md-3">
+			<h6>Designed By:</h6>
+			<div class="footer-links">
+			<p>Qasim Hussain</p>
+			<h6>Contact No:</h6>
+			<p>03112816115</p>
+			<h6>address:</h6>
+			<p>Shah Faisal Colony</p>	
+			
+				
+				
+			
+			</div>
+				</div>
+				
+			
+			<div class="col-6 col-md-3">
+			<h6>Site Map</h6>
+			<div class="footer-links">
+				<a href="../home.html">Home</a><br>
+				
+				<a  href="#"><i class="fa fa-arrow-down"></i> Zone Categories </a><br>
+				
+					<a href="east.html">East</a><br>
+					<a href="../west/west.html">West</a><br>
+					<a href="../south/south.html">South</a><br>
+					<a href="../north/north.html">North</a><br>
+				<br>
+				<a href="../Gallery.html">Gallery</a><br>
+				<a href="#">About Us</a><br>
+				<a href="../Contact us.html">Contact Us</a><br>
+				
+			</div>	
+			</div>
+			</div>
+			<hr class="small">
+		
+		</div>
+		<div class="container">
+		<div class="row">
+		<div class="col-md-8 col-sm-6 col-12">
+		<p class="copyright-text">Copyright &copy; 2021 All Rights Reserved By
+			<a href="#">Historical Monuments</a>
+			</p>	
+			</div>	
+			<div class="col-md-4 col-sm-6 col-12">
+			<div class="social-icons">
+				<a class="facebook" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+				<a class="twitter" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+				<a class="instagram" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+				<a class="whatsapp" href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+				<a class="gmail" href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp"><i class="fa fa-envelope"></i></a>
+				
+				</div>
+			
+			</div>
+			</div>
+		</div>
+		
+		</footer>	
+			
+	
+				
+	
+		
+	
+        
+			
+			
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>								
+</body>
+</html>

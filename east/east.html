@@ -1,0 +1,1006 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>East</title>	
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<style>
+	
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+nav{
+	background: black;
+}
+nav:after{
+	content: '';
+	clear: both;
+	display: table;
+}
+.logo {
+   
+   
+    float: left;
+	color: white;
+	font-size: 30px;
+	font-weight: 600;
+	line-height: 70px;
+	padding-left: 30px;
+    
+}
+.logo img{
+	width: 160px;
+    float: left;
+	line-height: 70px;
+	padding-left: 30px;
+    
+}
+nav ul{
+	float: right;
+	list-style: none;
+	margin-right: 40px;
+	position: relative;
+	
+}
+nav ul li{
+	float: left;
+	display: inline-block;
+	background: black;
+	margin: 0 5px;
+}
+nav ul li a{
+	color: white;
+	text-decoration: none;
+	line-height: 70px;
+	font-size: 20px; 
+	padding: 8px 15px;
+}
+nav ul li a:hover{
+	color: cyan;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #33ffff,
+	            0 0 5px #66ffff;
+}
+nav ul ul li a:hover{
+	color: cyan;
+	box-shadow: none;
+}
+nav ul ul{
+	position: absolute;
+	top: 90px;
+	border-top: 3px solid cyan;
+	opacity: 0;
+	visibility: hidden;
+	transition: top .3s;
+}
+nav ul li:hover > ul{
+	top: 70px;
+	opacity: 1;
+	visibility: visible;
+}
+
+nav ul ul li{
+	position: relative;
+	margin: 0px;
+	width: 120px;
+	float: none;
+	display: list-item;
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+nav ul ul li a{
+	line-height: 50px;
+}
+.active,.icon, input{
+	display: none;
+}
+@media (max-width: 968px) {
+	nav ul{
+		margin-right: 0px;
+		float: left;
+	}
+	.logo{
+		padding-left: 30px;
+		width: 100%;
+	}
+	.logo img{
+		padding-left: 30px;
+		width: 60%;
+	}
+	nav ul li, nav ul ul li{
+		display: block;
+		width: 100%;
+	}
+	nav ul ul{
+		top: 70px;
+		position: static;
+		border-top: none;
+		float: none;
+		
+		opacity: 1;
+		visibility: visible;
+	}
+	nav ul ul li{
+		border-bottom: 0px;
+	}
+	nav ul ul a{
+		padding-left: 40px;
+		
+	}
+	.active{
+		display: block;
+		color: white;
+		font-size: 18px;
+		padding: 0 20px;
+		line-height: 70px;
+		cursor: pointer;
+	}
+	.active:hover{
+		color: cyan;
+	}
+	.icon{
+		display: block;
+		color: white;
+		position: absolute;
+		right: 40px;
+		line-height: 70px;
+		font-size: 25px;
+		cursor: pointer;
+	}
+	nav ul li a:hover{
+		box-shadow: none;
+		
+	}
+
+	.active + a, ul{
+	display: none;
+}
+	
+[id^=btn]:checked + ul{
+	display: block;
+}
+	}
+	hr{
+	background: black;
+	border: 1px solid black;
+}
+	.site-footer{
+		background-color: black;
+		padding: 45px 0 20px;
+		font-size: 18px;
+		line-height: 24px;
+		color: white;
+		border-radius: 12px;
+		box-shadow: 0 10px 20px;
+		
+		
+	}
+	.site-footer hr{
+		border-top-color: burlywood;
+		opacity: 0.5;
+	}
+	.site-footer hr.small{
+		margin: 20px 0;
+	}
+	.site-footer h6{
+		color: burlywood;
+		font-size: 22px;
+		text-transform: uppercase;
+		margin-top: 5px;
+		letter-spacing: 2px;
+	}
+	.site-footer a{
+		color: white;
+	}
+	.site-footer a:hover{
+		color: cyan;
+		text-decoration: none;
+	}
+	.footer-links{
+		padding: left;
+		list-style: none;
+	}
+	
+	.footer-links a{
+		color: white;
+		font-size: 18px;
+	}
+	
+	.footer-links a:hover,
+	.footer-links a:active,
+	.footer-links a:focus{
+		color: cyan;
+		text-decoration: none;
+	}
+	.footer-links p{
+		color: white;
+		font-size: 18px;
+	}
+	.footer-links p:hover,
+	.footer-links p:active,
+	.footer-links p:focus{
+		color: cyan;
+		text-decoration: none;
+	}
+	
+	
+	.site-footer .socail-icons{
+		text-align: right;
+	}
+	.site-footer .socail-icons a{
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		margin-left: 6px;
+		margin-right: 0;
+		border-radius: 100%;
+		background-color: #33353d;
+	}
+	.copyright-text{
+		margin: 0;
+	}
+	@media (max-width: 991px) {
+		.site-footer [class^="col-"] {
+			margin-bottom: 30px;
+		}
+	}
+	@media (max-width: 767px){
+		.site-footer{
+			padding-bottom: 0;
+		}
+		.site-footer .copyright-text,
+		.site-footer .social-icons {
+			text-align: center;
+		}
+		
+	}
+	.social-icons{
+		padding-left: 0;
+		margin-bottom: 0;
+		list-style: none;
+	}
+	
+	.social-icons a{
+		background-color: #eceeef;
+		color: #818a91;
+		font-size: 22px;
+		display: inline-block;
+		line-height: 48px;
+		width: 48px;
+		height: 48px;
+		text-align: center;
+		margin-right: 8px;
+		border-radius: 100%;
+		-webkit-transition: all 0.2 linear;
+		transition: all 0.2 linear;
+	}
+	.social-icons a:active,
+	.social-icons a:hover,
+	.social-icons a:focus{
+		color: white;
+		background-color: #29aafe;
+	}
+	.social-icons a.facebook:hover{
+		background-color: #3b5998;
+	}
+	.social-icons a.twitter:hover{
+		background-color: #00aced;
+	}
+	.social-icons a.instagram:hover{
+		background-color: #EA4CD0;
+	}
+	.social-icons a.whatsapp:hover{
+		background-color: #1BEC4D;
+	}
+	.social-icons a.gmail:hover{
+		background-color: #D82B2E;
+	}
+	
+	
+
+	
+	
+	
+	
+	</style>
+
+	
+
+</head>
+	
+<body style="background-color: bisque">
+	<div class="section">
+	
+	 <nav>
+	<div class="logo"><img src="logo.png" alt="logo" class="logo">Historical Monuments</div>
+	  <label for="btn" class="icon">
+	  <span class="fa fa-bars"></span>
+	  </label>
+	  <input type="checkbox" id="btn">
+	  <ul>
+                    <li>
+                        <a href="../home.html">Home <i class="fa fa-home"></i></a>
+                    </li>
+		  <li>
+			  <label for="btn1" class="active">Zone Categories +</label>
+			  
+                        <a  href="#"> Zone Categories</a>
+			  <input type="checkbox" id="btn1">
+                        <ul>
+                        
+                        <li>
+                                <a  href="east.html" >East</a>
+                            </li>
+                            <li>
+                                <a  href="../west/west.html" >West</a>
+                            </li>
+                            <li>
+                                <a  href="../south/south.html" >South</a>
+                            </li>
+                            <li>
+                                <a href="../north/north.html" >North</a>
+                            </li>
+                        </ul>
+                    </li>
+		  <li>
+                        <a  href="../Gallery.html">Gallery <i class="fa fa-image"></i></a>
+                    </li>
+                    
+                   
+                    <li>
+                        <a  href="../aboutus.html">About us <i class="fa fa-users"></i></a>
+                    </li>
+                    <li>
+                        <a  href="../Contact us.html" >Contact us <i class="fa fa-volume-control-phone"></i></a>
+                    </li>
+                    
+                    
+	  </ul>
+	
+	</nav>
+		
+	<br>
+		<hr>
+	<h1 align="center" style="font-family: 'alexa-std'"><i><b>Historical Monuments Of World(East)</b></i></h1>
+	<hr>
+		<br>
+		<br>
+	<!--Cards-->
+		
+		<!--Ist Row Start-->	
+		
+		<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="tsarbell.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Tsar Bell</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model4">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder4">Tsar Bell</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="tsarbell.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Tsar Bell</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center"> Moscow, Russia</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The history of making the bell is full of many difficulties, failures, and disasters. The bell was formed and cast in a special moulding pit at Ivanovskaya Square to the east of the 'Ivan the Great' Bell Tower.</p>
+			
+			<p class="text-justify">Woodcarvers from St. Petersburg—Vasily Kobelev, Pyotr Galkin, Pyotr Kokhtev, Pyotr Serebryakov and the moulding master Pyotr Luokovnikov were commissioned to make the relief ornamentation. The name of the sculptor was discovered not long ago—it was Feodor Medvedev who got educated in Italy. Preparatory works took almost two years.</p>
+
+		
+
+
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			 <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/east.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button> 
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+			</div>
+		<!--Card 1 Complete-->
+		
+		<!--Card 2nd Started-->
+		
+				<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="bajrasandhimonument2.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Bajra Sandhi</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model5">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder5">Bajra Sandhi</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="bajrasandhimonument2.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Bajra Sandhi</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center"> Denpasar, Indonesia</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">Bajra Sandhi Monument is a monument to the struggles of the Balinese people throughout history. The monument is located in front of the Bali Governor's Office in Denpasar, Indonesia, on the island of Bali. The monument was built in 1987, inaugurated by president Megawati Sukarnoputri on June 14, 2003.</p>
+			
+			<p class="text-justify">The monument was originally built in 1987 and opened to the public in 2004. It stands to represent a long history of struggle of the Balinese people, namely the invasion of the Dutch in 1906 and 1908. The invasions saw the deaths of over 1,000 Balinese people, many of whom were civilians, including the Balinese rulers of Badung and Tabanan. These was some of 6 Dutch involvements in Bali, being the most recent and catastrophic in its statistical proportions.The statue now represents the struggle surrounding Dutch colonialism, which was criticized down the line for its policies especially in the eastern islands, along with religious historical references predating Dutch colonialism such as the introduction of Hinduism. </p>
+			
+			 
+     
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/east.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button> 
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+		</div>
+		<!--Card 2 Complete-->
+		
+		<!--card 3 started-->
+					
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="the kelpies uk.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">The Kelpies</h3>
+			<hr>
+          <p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model6">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder6">The Kelpies</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="the kelpies uk.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">The Kelpies</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Falkirk, Scotland</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The Kelpies are 30-metre-high horse-head sculptures depicting kelpies (shape-shifting water spirits), located between Falkirk and Grangemouth,standing next to a new extension to the Forth and Clyde Canal, and near River Carron, in The Helix, a new parkland project built to connect 16 communities in the Falkirk Council Area, Scotland. The sculptures were designed by sculptor Andy Scott and were completed in October 2013.The sculptures form a gateway at the eastern entrance to the Forth and Clyde canal, and the new canal extension built as part of The Helix land transformation project. The Kelpies are a monument to horse-powered heritage across Scotland.</p>
+			<p class="text-justify">The sculptures were opened to the public in April 2014. As part of the project, they will have their own visitor centre, and sit beside a newly developed canal turning pool and extension. This canal extension reconnects the Forth and Clyde Canal with the River Forth, and improves navigation between the East and West of Scotland.</p>
+
+		  
+     
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/east.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button> 
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>	
+	</div>
+		
+</div>
+			</div>
+		<!--Card 3 Complete-->
+		
+
+	
+		
+	 <!--Ist row container finish-->
+		<div class="container">
+	<div class="row py-5">
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="eiffel tower.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Eiffel Tower</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Eiffel Tower</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="eiffel tower.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Eiffel Tower</h3>	
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Paris,France</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The Eiffel tower history represents a part of national heritage. It's as been the symbol of France and Paris for decades. But when Gustave Eiffel achived its construction in 1889, the tower was only meant to be temporary in the Parisian landscape and was far from being the parisians' favourite landmark. Discover the evolution and the history of the Paris Eiffel Tower.</p>
+<p class="text-justify">The most popular tourist place in Paris has stretched to the Parisian skies for 127 years. Although now symbolic of France, it wasn’t meant to last. Without a doubt, the turning point in the Eiffel Tower history took place at the 1889 Universal Exposition. In commemoration of the 100th anniversary of the French Revolution, a competition was organized with the aim to “build on the Champ-de-Mars an iron tower with a square base, 125 meters wide and 300 meters high.” Out of the 107 proposals submitted, Gustave Eiffel’s was chosen. By his side were engineers Maurice Koechlin and Emile Nouguier as well as architect Stephen Sauvestre.</p></div>
+		 
+		</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+		   <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/east.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+		</div>
+		
+		
+		<!--Card 1 Complete-->
+		
+		<!--Card 2 Started-->
+		
+<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="kabul mueseum.jpg" alt="" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Kabul Mueseum</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model2">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder2">Kabul Mueseum</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="kabul mueseum.jpg" alt="" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Kabul Mueseum</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Darulaman,Kabul,Afghanistan</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The National Museum of Afghanistan  Mūzīyam-e mellī-ye Afghānestān;   also known as the Kabul Museum, is a two-story building located 9 km southwest of the center of Kabul in Afghanistan. As of 2014, the museum is under major expansion according to international standards, with a larger size adjoining garden for visitors to relax and walk around.The museum was once considered to be one of the world's finest.
+			  The Afghan National Museum was opened in 1919 during the reign of Emir Amanullah Khan (he became King of Afghanistan in 1926). The collection was originally inside the Bagh-e Bala Palace, but was moved in 1922 and began as a 'Cabinet of Curiosities'. </p>
+
+<p class="text-justify">It was moved to its present location in 1931. Historian Nancy Dupree co-authored A Guide to the Kabul Museum in 1964. In 1973, a Danish architect was hired to design a new building for the museum, but the plans were never carried out.[15] In 1989, the Bactrian Gold had been moved to an underground vault at the Central Bank of Afghanistan.
+</p>
+		  
+     
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+		 <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/east.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>	  
+       
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+			</div>
+		<!--Card 2 Complete-->
+			<!--card 3 Started-->
+		
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="hanging temple china.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Hanging Temple</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model3">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder3">Hanging Temple</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="hanging temple china.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Hanging Temple</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center"> Datong City, Shanxi Province, China</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The Hanging Temple, also Hengshan Hanging Temple, Hanging Monastery or Xuankong Temple,  is a temple built into a cliff (75 m or 246 ft above the ground) near Mount Heng in Hunyuan County, Datong City, Shanxi Province, China. The closest city is Datong, 64 kilometres (40 mi) to the northwest. Along with the Yungang Grottoes, the Hanging Temple is one of the main tourist attractions and historical sites in the Datong area. Built more than 1,500 years ago, this temple is notable not only for its location on a sheer precipice but also because it is the only existing temple with the combination of three Chinese traditional philosophies: Buddhism, Taoism, and Confucianism</p>
+			
+			<p class="text-justify">The structure is kept in place with oak crossbeams fitted into holes chiseled into the cliffs. The main supportive structure is hidden inside the bedrock. The monastery is located in the small canyon basin, and the body of the building hangs from the middle of the cliff under the prominent summit, protecting the temple from rain erosion and sunlight. Coupled with the repair of the dynasties, the color tattoo in the temple is relatively well preserved.
+</p>
+			
+
+ 	  
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/east.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button> 
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+			</div>
+			
+		<!--Card 3 Complete-->
+		</div>
+	</div> <!--2nd row container finish-->
+	
+		
+		
+		
+		<div class="container">
+			
+			<div class="row">
+				
+	<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="hs.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Hagia Sophia</h3>
+			<hr>
+          <p  align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model7">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+		
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model7" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder7">Hagia Sophia</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="hs.jpg" style= "width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Hagia Sophia</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Istanbul,Turkey</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The Hagia Sophia is an enormous architectural marvel in Istanbul, Turkey, that was originally built as a Christian basilica nearly 1,500 years ago. Much like the Eiffel Tower in Paris or the Parthenon in Athens, the Hagia Sophia is a long-enduring symbol of the cosmopolitan city. However, as notable as the structure is itself, its role in the history of Istanbul—and, for that matter, the world—is also significant and touches upon matters related to international politics, religion, art and architecture.</p>
+			
+<p class="text-justify">The Hagia Sophia anchors the Old City of Istanbul and has served for centuries as a landmark for both Orthodox Christians and Muslims, as its significance has shifted with that of the dominant culture in the Turkish city.
+
+Istanbul straddles the Bosporus strait, a waterway that serves as a geographic border between Europe and Asia. The Turkish city of nearly 15 million residents thus lies in both continents.
+</p>
+		
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			   <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/east.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+       	
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+		</div> 
+				
+	
+		<!--Card 2 Started-->
+		
+<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="pk monument.jpg" alt="" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Pakistan Monument</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model8">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model8" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder8">Pakistan Monument</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="pk monument.jpg" alt="" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Pakistan Monument</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Islamabad,Pakistan</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The Pakistan Monument is a national monument and heritage museum located on the western Shakarparian Hills in Islamabad, Pakistan. The monument was constructed to symbolize the unity of the Pakistani people. It is dedicated to the people of Pakistan who sacrificed their "today" for a better "tomorrow". Its elevation makes the monument visible from across the Islamabad-Rawalpindi metropolitan area and is a popular tourist destination.</p>
+
+<p class="text-justify">The plan for a National Monument was first envisioned in 2002 by government of Pakistan then assisted by Uxi Mufti, son of Mumtaz Mufti. The Ministry of Culture was tasked to organize through Pakistan Council of Architects and Town Planners; a national monument design competition based on the theme of signifying strength, unity and dedication of the people of Pakistan into an icon representing an independent and free nation.From a total of 21 submissions, 3 were short-listed. The final design proposed by Arif Masoud was selected.Adjoining the monument is the Pakistan Monument Museum, which includes a wax museum depicting important events leading to the Pakistan Movement. Furthermore, the facilities includes a reference library, audio-visual archive, conference hall along with a 62-seat capacity auditorium known as Panorama Hall.
+</p>
+		 
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			   <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/east.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+			</div>
+		<!--Card 2 Complete-->
+			<!--card 3 started-->
+					
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="leaning tower.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Leaning Tower</h3>
+			<hr>
+          <p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model9">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder9">Leaning Tower</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="leaning tower.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Leaning Tower</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Pisa,Italy</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The Leaning Tower of Pisa (Italian: torre pendente di Pisa) or simply the Tower of Pisa is the campanile, or freestanding bell tower, of the cathedral of the Italian city of Pisa, known worldwide for its nearly four-degree lean, the result of an unstable foundation. The tower is situated behind the Pisa Cathedral and is the third-oldest structure in the city's Cathedral Square (Piazza del Duomo), after the cathedral and the Pisa Baptistry.</p>
+			<p class="text-justify">The height of the tower is 55.86 metres (183.27 feet) from the ground on the low side and 56.67 metres (185.93 feet) on the high side. The width of the walls at the base is 2.44 m (8 ft 0.06 in). Its weight is estimated at 14,500 metric tons (16,000 short tons). The tower has 296 or 294 steps; the seventh floor has two fewer steps on the north-facing staircase.</p>
+
+		 
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			   <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/east.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>	
+	</div>
+		
+</div>
+			</div>
+		<!--Card 3 Complete-->
+	<!--3rd row container finish-->
+		<br>
+	<footer class="site-footer">	
+		<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<h6>About Us</h6>
+				<p class="text-justify">Historical monuments are the cultural heritage of any country.They speak a thousand words about the place, its traditions, and historical significance. Monuments take us to the path of knowing our past and connecting it with the future.
+
+Every country comprises many historical monuments. While some are on the verge of getting destroyed, some are still in their intact form. It mainly depends upon their architectural compliance, grandeur and the way they were made. Today, every country is making efforts to save its historical monuments so that its cultural heritage does not suffer.</p>
+			
+			</div>
+			<div class="col-6 col-md-3">
+			<h6>Designed By:</h6>
+			<div class="footer-links">
+			<p>Qasim Hussain</p>
+			<h6>Contact No:</h6>
+			<p>03112816115</p>
+			<h6>address:</h6>
+			<p>Shah Faisal Colony</p>	
+			
+				
+				
+			
+			</div>
+				</div>
+				
+			
+			<div class="col-6 col-md-3">
+			<h6>Site Map</h6>
+			<div class="footer-links">
+				<a href="../home.html">Home</a><br>
+				
+				<a  href="#"><i class="fa fa-arrow-down"></i> Zone Categories </a><br>
+				
+					<a href="east.html">East</a><br>
+					<a href="../west/west.html">West</a><br>
+					<a href="../south/south.html">South</a><br>
+					<a href="../north/north.html">North</a><br>
+				<br>
+				<a href="../Gallery.html">Gallery</a><br>
+				<a href="#">About Us</a><br>
+				<a href="../Contact us.html">Contact Us</a><br>
+				
+			</div>	
+			</div>
+			</div>
+			<hr class="small">
+		
+		</div>
+		<div class="container">
+		<div class="row">
+		<div class="col-md-8 col-sm-6 col-12">
+		<p class="copyright-text">Copyright &copy; 2021 All Rights Reserved By
+			<a href="#">Historical Monuments</a>
+			</p>	
+			</div>	
+			<div class="col-md-4 col-sm-6 col-12">
+			<div class="social-icons">
+				<a class="facebook" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+				<a class="twitter" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+				<a class="instagram" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+				<a class="whatsapp" href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+				<a class="gmail" href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp"><i class="fa fa-envelope"></i></a>
+				
+				</div>
+			
+			</div>
+			</div>
+		</div>
+		
+		</footer>	
+			
+	
+		
+		
+
+			
+		
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>			
+</body>
+</html>

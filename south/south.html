@@ -1,0 +1,1007 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />	
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		
+<title>South</title>
+</head>
+	<style>
+	* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+nav{
+	background: black;
+}
+nav:after{
+	content: '';
+	clear: both;
+	display: table;
+}
+.logo {
+   
+   
+    float: left;
+	color: white;
+	font-size: 30px;
+	font-weight: 600;
+	line-height: 70px;
+	padding-left: 30px;
+    
+}
+.logo img{
+	width: 160px;
+    float: left;
+	line-height: 70px;
+	padding-left: 30px;
+    
+}
+nav ul{
+	float: right;
+	list-style: none;
+	margin-right: 40px;
+	position: relative;
+	
+}
+nav ul li{
+	float: left;
+	display: inline-block;
+	background: black;
+	margin: 0 5px;
+}
+nav ul li a{
+	color: white;
+	text-decoration: none;
+	line-height: 70px;
+	font-size: 20px; 
+	padding: 8px 15px;
+}
+nav ul li a:hover{
+	color: cyan;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #33ffff,
+	            0 0 5px #66ffff;
+}
+nav ul ul li a:hover{
+	color: cyan;
+	box-shadow: none;
+}
+nav ul ul{
+	position: absolute;
+	top: 90px;
+	border-top: 3px solid cyan;
+	opacity: 0;
+	visibility: hidden;
+	transition: top .3s;
+}
+nav ul li:hover > ul{
+	top: 70px;
+	opacity: 1;
+	visibility: visible;
+}
+
+nav ul ul li{
+	position: relative;
+	margin: 0px;
+	width: 120px;
+	float: none;
+	display: list-item;
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+nav ul ul li a{
+	line-height: 50px;
+}
+.active,.icon, input{
+	display: none;
+}
+@media all and (max-width: 968px) {
+	nav ul{
+		margin-right: 0px;
+		float: left;
+	}
+	.logo{
+		padding-left: 30px;
+		width: 100%;
+	}
+	.logo img{
+		padding-left: 30px;
+		width: 60%;
+	}
+	nav ul li, nav ul ul li{
+		display: block;
+		width: 100%;
+	}
+	nav ul ul{
+		top: 70px;
+		position: static;
+		border-top: none;
+		float: none;
+		
+		opacity: 1;
+		visibility: visible;
+	}
+	nav ul ul li{
+		border-bottom: 0px;
+	}
+	nav ul ul a{
+		padding-left: 40px;
+		
+	}
+	.active{
+		display: block;
+		color: white;
+		font-size: 18px;
+		padding: 0 20px;
+		line-height: 70px;
+		cursor: pointer;
+	}
+	.active:hover{
+		color: cyan;
+	}
+	.icon{
+		display: block;
+		color: white;
+		position: absolute;
+		right: 40px;
+		line-height: 70px;
+		font-size: 25px;
+		cursor: pointer;
+	}
+	nav ul li a:hover{
+		box-shadow: none;
+		
+	}
+
+.active + a, ul{
+	display: none;
+}
+[id^=btn]:checked + ul{
+	display: block;
+}
+	}
+		
+hr{
+	background: black;
+	border: 1px solid black;
+}
+.site-footer{
+		background-color: black;
+		padding: 45px 0 20px;
+		font-size: 18px;
+		line-height: 24px;
+		color: white;
+		border-radius: 12px;
+		box-shadow: 0 10px 20px;
+		
+		
+	}
+	.site-footer hr{
+		border-top-color: burlywood;
+		opacity: 0.5;
+	}
+	.site-footer hr.small{
+		margin: 20px 0;
+	}
+	.site-footer h6{
+		color: burlywood;
+		font-size: 22px;
+		text-transform: uppercase;
+		margin-top: 5px;
+		letter-spacing: 2px;
+	}
+	.site-footer a{
+		color: white;
+	}
+	.site-footer a:hover{
+		color: cyan;
+		text-decoration: none;
+	}
+	.footer-links{
+		padding: left;
+		list-style: none;
+	}
+	
+	.footer-links a{
+		color: white;
+		font-size: 18px;
+	}
+	
+	.footer-links a:hover,
+	.footer-links a:active,
+	.footer-links a:focus{
+		color: cyan;
+		text-decoration: none;
+	}
+	.footer-links p{
+		color: white;
+		font-size: 18px;
+	}
+	.footer-links p:hover,
+	.footer-links p:active,
+	.footer-links p:focus{
+		color: cyan;
+		text-decoration: none;
+	}
+	
+	
+	.site-footer .socail-icons{
+		text-align: right;
+	}
+	.site-footer .socail-icons a{
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		margin-left: 6px;
+		margin-right: 0;
+		border-radius: 100%;
+		background-color: #33353d;
+	}
+	.copyright-text{
+		margin: 0;
+	}
+	@media (max-width: 991px) {
+		.site-footer [class^="col-"] {
+			margin-bottom: 30px;
+		}
+	}
+	@media (max-width: 767px){
+		.site-footer{
+			padding-bottom: 0;
+		}
+		.site-footer .copyright-text,
+		.site-footer .social-icons {
+			text-align: center;
+		}
+		
+	}
+	.social-icons{
+		padding-left: 0;
+		margin-bottom: 0;
+		list-style: none;
+	}
+	
+	.social-icons a{
+		background-color: #eceeef;
+		color: #818a91;
+		font-size: 22px;
+		display: inline-block;
+		line-height: 48px;
+		width: 48px;
+		height: 48px;
+		text-align: center;
+		margin-right: 8px;
+		border-radius: 100%;
+		-webkit-transition: all 0.2 linear;
+		transition: all 0.2 linear;
+	}
+	.social-icons a:active,
+	.social-icons a:hover,
+	.social-icons a:focus{
+		color: white;
+		background-color: #29aafe;
+	}
+	.social-icons a.facebook:hover{
+		background-color: #3b5998;
+	}
+	.social-icons a.twitter:hover{
+		background-color: #00aced;
+	}
+	.social-icons a.instagram:hover{
+		background-color: #EA4CD0;
+	}
+	.social-icons a.whatsapp:hover{
+		background-color: #1BEC4D;
+	}
+	.social-icons a.gmail:hover{
+		background-color: #D82B2E;
+	}
+			
+	
+	
+	
+	
+	
+	</style>
+
+
+<body style="background: bisque">
+	 <nav>
+<div class="logo"><img src="logo.png" alt="logo" class="logo">Historical Monuments</div>
+	  <label for="btn" class="icon">
+	  <span class="fa fa-bars"></span>
+	  </label>
+	  <input type="checkbox" id="btn">
+	  <ul>
+                    <li>
+                        <a href="../home.html">Home <i class="fa fa-home"></i></a>
+                    </li>
+		  <li>
+			  <label for="btn1" class="active">Zone Categories +</label>
+			  
+                        <a href="#"> Zone Categories</a>
+			  <input type="checkbox" id="btn1">
+                        <ul>
+                        
+                        <li>
+                                <a href="../east/east.html">East</a>
+                            </li>
+                            <li>
+                                <a href="../west/west.html">West</a>
+                            </li>
+                            <li>
+                                <a href="south.html">South</a>
+                            </li>
+                            <li>
+                                <a href="../north/north.html">North</a>
+                            </li>
+                        </ul>
+                    </li>
+		  <li>
+                        <a href="../Gallery.html">Gallery <i class="fa fa-image"></i></a>
+                    </li>
+                    
+                   
+                    <li>
+                        <a href="../aboutus.html">About us <i class="fa fa-users"></i></a>
+                    </li>
+                    <li>
+                        <a href="../Contact us.html">Contact us <i class="fa fa-volume-control-phone"></i></a>
+                    </li>
+                    
+                    
+	  </ul>
+	
+	</nav>
+	<br>
+		<hr>
+	<h1 align="center" style="font-family: 'alexa-std'"><i><b>Historical Monuments Of World(South)</b></i></h1>
+	<hr>
+		<br>
+		<br>
+	<!--Cards-->
+		
+		<!--Ist Row Start-->	
+		
+		<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="nbada waterfall rwanda.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Nbada Waterfalls</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model1">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder1">Nbada Waterfalls</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="nbada waterfall rwanda.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Nbada Waterfalls</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Rwanda-Tanzania border </p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify"> Nbada is a waterfall located on the Kagera river on the border between Rwanda and Tanzania, part of the most distant headwaters of the river Nile. The falls are approximately 15 m (49 ft) high and 40 m (130 ft) wide and have formed on Precambrian schists and quartz–phyllites.
+
+Although the falls themselves are not of significant height in comparison to other waterfalls, they have played an important part in the history of Rwanda because they form the only bridging point on the river in that area.</p>
+			
+			<p class="text-justify">The falls were the scene of the first arrival of Europeans in Rwanda in 1894, when the German count Gustav Adolf von Götzen came across from Tanzania (Rwanda had been considered part of German East Africa since 1885 but no German had yet entered the country). He continued from there to the palace of the Mwami at Nyanza, and onward to the shores of Lake Kivu.</p>
+
+		
+
+
+		 
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/south.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+			</div>
+		<!--Card 1 Complete-->
+		
+		<!--Card 2nd Started-->
+		
+				<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="mausoleum of _neto angola.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+
+			<h3 align="center">Neto Mausoleum</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model2">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder2">Neto Mausoleum</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="mausoleum of _neto angola.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Neto Mausoleum</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Luanda,Angola</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The Agostinho Neto Mausoleum is an obelisk-like concrete structure towering above the city of Luanda. It occupies the center of the Agostinho Neto Cultural Center, which takes up 4,633 square miles of Luanda, and serves as Neto's final resting place. Neto (1922-1979) served as Angola’s first president from 1975-1979 after Angola secured its independence from the Portuguese. He remained the leader of the Popular Movement for the Liberation of Angola (MPLA) in Angola's subsequent civil war, dying before long before its final end in 2002. A Portugal-trained physician, he was also known for his literary skills as a renowned poet. The tower was designed to reference Neto's poem "The Path of Stars", and is named after his book A Sacred Hope. </p>
+			
+			<p class="text-justify">Angola’s willingness to abide by United Nations’ sanctions increased in late 2017, when over 150 Mansudae employees were “invited” to leave Angola. By January 2018, Angola had terminated all further contracts with Mansudae.</p>
+			
+			 
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/south.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+		</div>
+		<!--Card 2 Complete-->
+		
+		<!--card 3 started-->
+					
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="Nyamata_Genocide_Memorial rwanda.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Genocide Memorial</h3>
+			<hr>
+          <p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model3">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder3">Genocide Memorial</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="Nyamata_Genocide_Memorial rwanda.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Genocide Memorial</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Kigali in Rwanda</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The Nyamata Genocide Memorial is based around a former church 30 km (19 mi) south of Kigali in Rwanda, which commemorates the Rwandan genocide in 1994. The remains of 50,000 people are buried here.</p>
+			<p class="text-justify">The memorial is based around a former church which is about 30 km (19 mi) south of Kigali in Rwanda, which commemorates the Rwandan genocide in 1994. This memorial is one of six national memorial sites in Rwanda that commemorate the Rwanda Genocide. The others are the Murambi Memorial Centre, Bisesero Genocide Memorial Centre, Ntarama Genocide Memorial Centre, Kigali Genocide Memorial, and Nyarubuye Memorial.There are over 250 registered memorial sites that commemorate genocide in Rwanda.</p>
+
+		  
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/south.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>	
+	</div>
+		
+</div>
+			</div>
+		<!--Card 3 Complete-->
+		
+
+	
+		
+	 <!--Ist row container finish-->
+		<div class="container">
+	<div class="row py-5">
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="matapos hills zim.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Matopo Hills Zim</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Matopo Hills Zim</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="matapos hills zim.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Matopo Hills Zim</h3>	
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Matobo National Park, Zimbabwe</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">Matopo Hills, Matopo also spelled Matopos or Matobo, mass of granite hills, southeast of Bulawayo, Zimbabwe, formed by river erosion and weathered into fantastic shapes and deep valleys. The hills are associated with folklore and tradition, some being venerated as dwelling places of the spirits of departed Ndebele chiefs.
+
+</p>
+<p class="text-justify">The hills contain gigantic caves (notably Bambata, Nswatugi, and Silozwane) with Khoekhoe paintings, and there are Stone and Iron Age archaeological sites. The name may have originated from matombe or madombe, meaning “the rocks,” or from matobo, “bald heads.”</p></div>
+		 
+		</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+		  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/south.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+		</div>
+		
+		
+		<!--Card 1 Complete-->
+		
+		<!--Card 2 Started-->
+		
+<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="diggers fountain south africa.jpg" alt="" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Diggers Fountain</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model5">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder5">Diggers Fountain</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="diggers fountain south africa.jpg" alt="" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Diggers Fountain</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Kimberley,South Africa </p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The Diggers’ Fountain is one of the monuments that constitute part of this heritage, contributing to it in an important way. It depicts five life-sized miners holding up a diamond sieve, high above their heads. Their strength and power is seen as they work hard under the weight of the sieve. This is a working fountain, situated in the heart of the Ernest Oppenheimer Gardens. </p>
+
+<p class="text-justify">These gardens are a picturesque memorial to Sir Ernest Oppenheimer, who was a key figure in the local and international mining world, and the first mayor of Kimberley. The fountain was established to honour the miners, both past and present, who work hard in keeping this important industry alive.
+</p>
+		 
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/south.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+			</div>
+		<!--Card 2 Complete-->
+			<!--card 3 Started-->
+		
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="danamombe ruins zimbabve.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Dananombe Ruins</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model6">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder6">Dananombe Ruins</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="danamombe ruins zimbabve.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Dananombe Ruins</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center"> remote Somabhula Flats,Zimbabwe</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">Danangombe (formerly Dhlo-Dhlo or Ndlo Dlo, alternative spellings Dananombe and Danan'ombe) is a Zimbabwean archaeological site, about eighty kilometres from Gweru, in the direction of Bulawayo and about 35 kilometres south of the highway. It is not often visited due to the poor quality roads in the area. The remains on the site resemble those of Khami. Nearby are the smaller ruins at Naletale, that were occupied at the same time. The original name used by the Kalanga people is unknown as Dhlo-Dhlo (the name in Sindebele) was applied to the site later and it is unclear whether the name of Danangombe retains elements of the original name. </p>
+			
+			<p class="text-justify">Danan(g)ombe (together with Khami and Naletale) was one of the centres of the Rozvi culture, which had succeeded the Torwa.
+
+It is not to be confused with Danangombe Hill near Mutare.
+</p>
+			
+
+ 	 
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/south.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+			</div>
+			
+		<!--Card 3 Complete-->
+		</div>
+	</div> <!--2nd row container finish-->
+	
+		
+		
+		
+		<div class="container">
+			
+			<div class="row">
+				
+	<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="R.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Micheal Church</h3>
+			<hr>
+          <p  align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model7">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+		
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model7" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder7">Micheal Church</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="R.jpg" style= "width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Micheal Church</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Blantyre,Malawi</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">St. Michael and All Angels Church was constructed from 1888 to 1891 of brick at the Blantyre Mission in Blantyre, Malawi. It is located on the original Scottish mission site, off Chileka Rd, and is in the Church of Central Africa, Presbyterian’s Blantyre Synod. Since 1991, it has been partnered with Hiland Presbyterian Church in Pittsburgh, Pennsylvania. In 1885, Lieutenant H. E. O'Neil determined the longitude of Blantyre to be 2 hours 20 minutes 13.56 seconds east of Greenwich by means of a series of 365 sets of lunar observations, and a plaque installed in the side of the church commemorates this achievement.</p>
+			
+<p class="text-justify">The church has been described as
+
+the first permanent Christian Church erected ... between the Zambezi and the Nile. – Rev. Alexander Hetherwick C.B.E., D.D., F.R.G.S.
+
+
+</p>
+			
+ 		  
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/south.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+       	
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+		</div> 
+				
+	<!--Card 2 Started-->
+		
+<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="download.jpg" alt="" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Matsieng </h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model8">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model8" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder8">Matsieng </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="download.jpg" alt="" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Matsieng </h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Gaborone,Botswana</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The Matsieng Footprints are engraved petroglyphs found in southern Botswana. Matsieng may have once been used as a ritual site for many peoples due to its role in local folktales. It shares its name with a character in African origin stories, Matsieng the great hunter. The site contains up to 117 engravings and three natural rock-holes, dating back between 3,000 to 10,000 years. Many of the footprints are human or feline-like in design.</p>
+
+<p class="text-justify">Matsieng is a site in south east Botswana, near the city of Gaborone. It is known for its rock art, or petroglyphs, called the Matsieng Footprints. The site is littered with depressions, or holes, thought to have been formed as volcanic vents. They fill with rainwater, and are sometimes used by local peoples still today for water collection. There are two deeper cavities on the site; around the north east one is where most of the rock art is found.Most of the site is littered with carved footprints, both human and animal, but there are also a few profile depictions of common African animals, such as giraffes. The outlines of footprints were crafted by pecking, a form of engraving, by ancient peoples. On the site, there is evidence of LSA dated artifacts, but it is more likely that the engravings were created earlier by hunter-gatherers, perhaps by ancestors of the San or the Basarwa.
+</p>
+		  
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/south.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+			</div>
+				<!--Card 2 Complete-->
+			<!--card 3 started-->
+					
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="spitzkoppe.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Spitzkoppe</h3>
+			<hr>
+          <p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model9">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder9">Spitzkoppe</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="spitzkoppe.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Spitzkoppe </h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center"> Namib desert,Namibia</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The Spitzkoppe (from German for "pointed dome"; also referred to as Spitzkop, Groot Spitzkop, or the "Matterhorn of Namibia") is a group of bald granite peaks or inselbergs located between Usakos and Swakopmund in the Namib desert of Namibia. The granite is more than 120 million years old and the highest outcrop rises about 1,728 metres (5,669 ft) above sea level. The peaks stand out dramatically from the flat surrounding plains. The highest peak is about 670 m (2,200 ft) above the floor of the desert below. A minor peak – the Little Spitzkoppe – lies nearby at an elevation of 1,557 m (5,108 ft). Other prominences stretch out into a range known as the Pontok Mountains</p>
+			<p class="text-justify">Many examples of Bushmen artwork can be seen painted on the rock in the Spitzkoppe area. The Spitzkoppe Mountains were also the filming location for 2001: A Space Odyssey in the "Dawn of Man" sequences.</p>
+
+		
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/south.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>	
+	</div>
+		
+		
+</div>
+			</div>
+		<!--Card 3 Complete-->
+	<!--3rd row container finish-->
+	<br>
+	<footer class="site-footer">	
+		<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<h6>About Us</h6>
+				<p class="text-justify">Historical monuments are the cultural heritage of any country.They speak a thousand words about the place, its traditions, and historical significance. Monuments take us to the path of knowing our past and connecting it with the future.
+
+Every country comprises many historical monuments. While some are on the verge of getting destroyed, some are still in their intact form. It mainly depends upon their architectural compliance, grandeur and the way they were made. Today, every country is making efforts to save its historical monuments so that its cultural heritage does not suffer.</p>
+			
+			</div>
+			<div class="col-6 col-md-3">
+			<h6>Designed By:</h6>
+			<div class="footer-links">
+			<p>Qasim Hussain</p>
+			<h6>Contact No:</h6>
+			<p>03112816115</p>
+			<h6>address:</h6>
+			<p>Shah Faisal Colony</p>	
+			
+				
+				
+			
+			</div>
+				</div>
+				
+			
+			<div class="col-6 col-md-3">
+			<h6>Site Map</h6>
+			<div class="footer-links">
+				<a href="../home.html">Home</a><br>
+				
+				<a  href="#"><i class="fa fa-arrow-down"></i> Zone Categories </a><br>
+				
+					<a href="east.html">East</a><br>
+					<a href="../west/west.html">West</a><br>
+					<a href="../south/south.html">South</a><br>
+					<a href="../north/north.html">North</a><br>
+				<br>
+				<a href="../Gallery.html">Gallery</a><br>
+				<a href="#">About Us</a><br>
+				<a href="../Contact us.html">Contact Us</a><br>
+				
+			</div>	
+			</div>
+			</div>
+			<hr class="small">
+		
+		</div>
+		<div class="container">
+		<div class="row">
+		<div class="col-md-8 col-sm-6 col-12">
+		<p class="copyright-text">Copyright &copy; 2021 All Rights Reserved By
+			<a href="#">Historical Monuments</a>
+			</p>	
+			</div>	
+			<div class="col-md-4 col-sm-6 col-12">
+			<div class="social-icons">
+				<a class="facebook" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+				<a class="twitter" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+				<a class="instagram" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+				<a class="whatsapp" href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+				<a class="gmail" href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp"><i class="fa fa-envelope"></i></a>
+				
+				</div>
+			
+			</div>
+			</div>
+		</div>
+		
+		</footer>	
+			
+	
+	
+        
+			
+			
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>							
+</body>
+</html>

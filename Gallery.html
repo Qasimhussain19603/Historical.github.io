@@ -1,0 +1,650 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+<title>Gallery</title>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<style>
+	
+	
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+nav{
+	background: black;
+}
+nav:after{
+	content: '';
+	clear: both;
+	display: table;
+}
+.logo {
+   
+   
+    float: left;
+	color: white;
+	font-size: 30px;
+	font-weight: 600;
+	line-height: 70px;
+	padding-left: 30px;
+    
+}
+.logo img{
+	width: 160px;
+    float: left;
+	line-height: 70px;
+	padding-left: 30px;
+    
+}
+	
+nav ul{
+	float: right;
+	list-style: none;
+	margin-right: 40px;
+	position: relative;
+	
+}
+nav ul li{
+	float: left;
+	display: inline-block;
+	background: black;
+	margin: 0 5px;
+}
+nav ul li a{
+	color: white;
+	text-decoration: none;
+	line-height: 70px;
+	font-size: 20px; 
+	padding: 8px 15px;
+}
+nav ul li a:hover{
+	color: cyan;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #33ffff,
+	            0 0 5px #66ffff;
+}
+nav ul ul li a:hover{
+	color: cyan;
+	box-shadow: none;
+}
+nav ul ul{
+	position: absolute;
+	top: 90px;
+	border-top: 3px solid cyan;
+	opacity: 0;
+	visibility: hidden;
+	transition: top .3s;
+}
+nav ul li:hover > ul{
+	top: 70px;
+	opacity: 1;
+	visibility: visible;
+}
+
+nav ul ul li{
+	position: relative;
+	margin: 0px;
+	width: 120px;
+	float: none;
+	display: list-item;
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+nav ul ul li a{
+	line-height: 50px;
+}
+.active,.icon, input{
+	display: none;
+}
+@media all and (max-width: 968px) {
+	nav ul{
+		margin-right: 0px;
+		float: left;
+	}
+	.logo{
+		padding-left: 30px;
+		width: 100%;
+	}
+	.logo img{
+		padding-left: 30px;
+		width: 60%;
+	}
+	nav ul li, nav ul ul li{
+		display: block;
+		width: 100%;
+	}
+	nav ul ul{
+		top: 70px;
+		position: static;
+		border-top: none;
+		float: none;
+		
+		opacity: 1;
+		visibility: visible;
+	}
+	nav ul ul li{
+		border-bottom: 0px;
+	}
+	nav ul ul a{
+		padding-left: 40px;
+		
+	}
+	.active{
+		display: block;
+		color: white;
+		font-size: 18px;
+		padding: 0 20px;
+		line-height: 70px;
+		cursor: pointer;
+	}
+	.active:hover{
+		color: cyan;
+	}
+	.icon{
+		display: block;
+		color: white;
+		position: absolute;
+		right: 40px;
+		line-height: 70px;
+		font-size: 25px;
+		cursor: pointer;
+	}
+	nav ul li a:hover{
+		box-shadow: none;
+		
+	}
+
+.active + a, ul{
+	display: none;
+}
+[id^=btn]:checked + ul{
+	display: block;
+}
+	}
+
+
+html {
+    scroll-behavior: smooth;
+}
+	hr{
+	border: 1px solid black;
+}
+.site-footer{
+		background-color: black;
+		padding: 45px 0 20px;
+		font-size: 18px;
+		line-height: 24px;
+		color: white;
+		border-radius: 12px;
+		box-shadow: 0 10px 20px;
+		
+		
+	}
+	.site-footer hr{
+		border-top-color: burlywood;
+		opacity: 0.5;
+	}
+	.site-footer hr.small{
+		margin: 20px 0;
+	}
+	.site-footer h6{
+		color: burlywood;
+		font-size: 22px;
+		text-transform: uppercase;
+		margin-top: 5px;
+		letter-spacing: 2px;
+	}
+	.site-footer a{
+		color: white;
+	}
+	.site-footer a:hover{
+		color: cyan;
+		text-decoration: none;
+	}
+	.footer-links{
+		padding: left;
+		list-style: none;
+	}
+	
+	.footer-links a{
+		color: white;
+		font-size: 18px;
+	}
+	
+	.footer-links a:hover,
+	.footer-links a:active,
+	.footer-links a:focus{
+		color: cyan;
+		text-decoration: none;
+	}
+	.footer-links p{
+		color: white;
+		font-size: 18px;
+	}
+	.footer-links p:hover,
+	.footer-links p:active,
+	.footer-links p:focus{
+		color: cyan;
+		text-decoration: none;
+	}
+	
+	
+	.site-footer .socail-icons{
+		text-align: right;
+	}
+	.site-footer .socail-icons a{
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		margin-left: 6px;
+		margin-right: 0;
+		border-radius: 100%;
+		background-color: #33353d;
+	}
+	.copyright-text{
+		margin: 0;
+	}
+	@media (max-width: 991px) {
+		.site-footer [class^="col-"] {
+			margin-bottom: 30px;
+		}
+	}
+	@media (max-width: 767px){
+		.site-footer{
+			padding-bottom: 0;
+		}
+		.site-footer .copyright-text,
+		.site-footer .social-icons {
+			text-align: center;
+		}
+		
+	}
+	.social-icons{
+		padding-left: 0;
+		margin-bottom: 0;
+		list-style: none;
+	}
+	
+	.social-icons a{
+		background-color: #eceeef;
+		color: #818a91;
+		font-size: 22px;
+		display: inline-block;
+		line-height: 48px;
+		width: 48px;
+		height: 48px;
+		text-align: center;
+		margin-right: 8px;
+		border-radius: 100%;
+		-webkit-transition: all 0.2 linear;
+		transition: all 0.2 linear;
+	}
+	.social-icons a:active,
+	.social-icons a:hover,
+	.social-icons a:focus{
+		color: white;
+		background-color: #29aafe;
+	}
+	.social-icons a.facebook:hover{
+		background-color: #3b5998;
+	}
+	.social-icons a.twitter:hover{
+		background-color: #00aced;
+	}
+	.social-icons a.instagram:hover{
+		background-color: #EA4CD0;
+	}
+	.social-icons a.whatsapp:hover{
+		background-color: #1BEC4D;
+	}
+	.social-icons a.gmail:hover{
+		background-color: #D82B2E;
+	}
+				
+	
+		</style>	
+
+</head>
+
+<body style="background-color: bisque">
+	<div class="section">
+	<nav>
+	<div class="logo"><img src="logo.png" alt="logo" class="logo">Historical Monuments</div>
+	  <label for="btn" class="icon">
+	  <span class="fa fa-bars"></span>
+	  </label>
+	  <input type="checkbox" id="btn">
+	  <ul>
+                    <li>
+                        <a href="home.html">Home <i class="fa fa-home"></i></a>
+                    </li>
+		  <li>
+			  <label for="btn1" class="active">Zone Categories +</label>
+			  
+                        <a href="#"> Zone Categories</a>
+			  <input type="checkbox" id="btn1">
+                        <ul>
+                        
+                        <li>
+                                <a href="east/east.html">East</a>
+                            </li>
+                            <li>
+                                <a href="west/west.html">West</a>
+                            </li>
+                            <li>
+                                <a href="south/south.html">South</a>
+                            </li>
+                            <li>
+                                <a href="north/north.html">North</a>
+                            </li>
+                        </ul>
+                    </li>
+		  <li>
+                        <a href="Gallery.html">Gallery <i class="fa fa-image"></i></a>
+                    </li>
+                    
+                   
+                    <li>
+                        <a href="aboutus.html">About us <i class="fa fa-users"></i></a>
+                    </li>
+                    <li>
+                        <a href="Contact us.html">Contact us <i class="fa fa-volume-control-phone"></i></a>
+                    </li>
+                    
+                    
+	  </ul>
+	
+	</nav>
+		<br>
+		<hr>
+	<h1 align="center" style="font-family: 'alexa-std'"><i><b> Gallery</b></i></h1>
+	<hr>
+		<br>
+		<br>
+		
+		<!--Cards-->
+		<div class="container">
+	<div class="row py-5">
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="temple of concordia.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Temple Of Concordia</h3>
+          <hr>
+			 <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Valley Of Temple, Agrigento</p>
+		  <hr>
+			</div>
+      </div>
+    </div>
+			</div>
+		
+			<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="trajan-column-dome-church.jpg" alt="" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Trajan's Column</h3>
+          <hr>
+			 <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Rome Italy</p>
+		  <hr>
+			</div>
+      </div>
+    </div>
+		</div>
+				<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="Holy Trinity Column in Olomouc.jpg" alt="" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Holy Trinity Column</h3>
+          <hr>
+			 <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Olomouc, Czech Republic</p>
+		  <hr>
+			</div>
+      </div>
+    </div>
+		</div>
+			</div>
+			
+				
+				<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="arc de triomphe.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Arc De Triomphe</h3>
+          <hr>
+			<hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Paris,France</p>
+		  <hr>
+			</div>
+      </div>
+    </div>
+		</div>
+		
+					
+		<div class="col-md-4">
+		<div class="card">
+      <div class="thumbnail">  <img src="ghirlamdina.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Ghirlandina</h3>
+          <hr>
+			<hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Modena,Italy</p>
+		  <hr>
+			</div>
+      </div>
+    </div>
+		</div>
+		
+		
+		<div class="col-md-4">
+		<div class="card">
+      <div class="thumbnail">  <img src="laboe naval memorial.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Laboe Naval Memorial</h3>
+          <hr>
+			<hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Laboe Germany</p>
+		  <hr>
+			</div>
+      </div>
+    </div>
+		</div>
+					</div>
+			<br>
+					<br>
+					
+			<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="Gol_Gumbaz.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Gol Gumbaz</h3>
+          <hr>
+			<hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Bijapur,India</p>
+		  <hr>
+			</div>
+      </div>
+    </div>
+		</div>		
+		
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="qutub minar.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Qutub Minar</h3>
+          <hr>
+			<hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">New Delhi,India</p>
+		  <hr>
+			</div>
+      </div>
+    </div>
+		</div>	
+		
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="kremilin.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Kremilin</h3>
+          <hr>
+			<hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Moscow,Russia</p>
+		  <hr>
+			</div>
+      </div>
+    </div>
+		</div>	
+				</div>
+		</div>
+			</div>
+		</div>
+	 
+
+		<!-- Footer-->
+		<br>
+	<footer class="site-footer">	
+		<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<h6>About Us</h6>
+				<p class="text-justify">Historical monuments are the cultural heritage of any country.They speak a thousand words about the place, its traditions, and historical significance. Monuments take us to the path of knowing our past and connecting it with the future.
+
+Every country comprises many historical monuments. While some are on the verge of getting destroyed, some are still in their intact form. It mainly depends upon their architectural compliance, grandeur and the way they were made. Today, every country is making efforts to save its historical monuments so that its cultural heritage does not suffer.</p>
+			
+			</div>
+			<div class="col-6 col-md-3">
+			<h6>Designed By:</h6>
+			<div class="footer-links">
+			<p>Qasim Hussain</p>
+			<h6>Contact No:</h6>
+			<p>03112816115</p>
+			<h6>address:</h6>
+			<p>Shah Faisal Colony</p>	
+			
+				
+				
+			
+			</div>
+				</div>
+				
+			
+			<div class="col-6 col-md-3">
+			<h6>Site Map</h6>
+			<div class="footer-links">
+				<a href="../home.html">Home</a><br>
+				
+				<a  href="#"><i class="fa fa-arrow-down"></i> Zone Categories </a><br>
+				
+					<a href="east.html">East</a><br>
+					<a href="../west/west.html">West</a><br>
+					<a href="../south/south.html">South</a><br>
+					<a href="../north/north.html">North</a><br>
+				<br>
+				<a href="../Gallery.html">Gallery</a><br>
+				<a href="#">About Us</a><br>
+				<a href="../Contact us.html">Contact Us</a><br>
+				
+			</div>	
+			</div>
+			</div>
+			<hr class="small">
+		
+		</div>
+		<div class="container">
+		<div class="row">
+		<div class="col-md-8 col-sm-6 col-12">
+		<p class="copyright-text">Copyright &copy; 2021 All Rights Reserved By
+			<a href="#">Historical Monuments</a>
+			</p>	
+			</div>	
+			<div class="col-md-4 col-sm-6 col-12">
+			<div class="social-icons">
+				<a class="facebook" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+				<a class="twitter" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+				<a class="instagram" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+				<a class="whatsapp" href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+				<a class="gmail" href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp"><i class="fa fa-envelope"></i></a>
+				
+				</div>
+			
+			</div>
+			</div>
+		</div>
+		
+		</footer>	
+			
+	
+		
+		
+		
+		
+				
+		
+				
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>			
+</body>
+</html>

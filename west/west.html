@@ -1,0 +1,1006 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />	
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	
+<title>West</title>
+</head>
+	<style>
+	* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+nav{
+	background: black;
+}
+nav:after{
+	content: '';
+	clear: both;
+	display: table;
+}
+.logo {
+   
+   
+    float: left;
+	color: white;
+	font-size: 30px;
+	font-weight: 600;
+	line-height: 70px;
+	padding-left: 30px;
+    
+}
+.logo img{
+	width: 160px;
+    float: left;
+	line-height: 70px;
+	padding-left: 30px;
+    
+}
+nav ul{
+	float: right;
+	list-style: none;
+	margin-right: 40px;
+	position: relative;
+	
+}
+nav ul li{
+	float: left;
+	display: inline-block;
+	background: black;
+	margin: 0 5px;
+}
+nav ul li a{
+	color: white;
+	text-decoration: none;
+	line-height: 70px;
+	font-size: 20px; 
+	padding: 8px 15px;
+}
+nav ul li a:hover{
+	color: cyan;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #33ffff,
+	            0 0 5px #66ffff;
+}
+nav ul ul li a:hover{
+	color: cyan;
+	box-shadow: none;
+}
+nav ul ul{
+	position: absolute;
+	top: 90px;
+	border-top: 3px solid cyan;
+	opacity: 0;
+	visibility: hidden;
+	transition: top .3s;
+}
+nav ul li:hover > ul{
+	top: 70px;
+	opacity: 1;
+	visibility: visible;
+}
+
+nav ul ul li{
+	position: relative;
+	margin: 0px;
+	width: 120px;
+	float: none;
+	display: list-item;
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+nav ul ul li a{
+	line-height: 50px;
+}
+.active,.icon, input{
+	display: none;
+}
+@media all and (max-width: 968px) {
+	nav ul{
+		margin-right: 0px;
+		float: left;
+	}
+	.logo{
+		padding-left: 30px;
+		width: 100%;
+	}
+	.logo img{
+		padding-left: 30px;
+		width: 60%;
+	}
+	nav ul li, nav ul ul li{
+		display: block;
+		width: 100%;
+	}
+	nav ul ul{
+		top: 70px;
+		position: static;
+		border-top: none;
+		float: none;
+		
+		opacity: 1;
+		visibility: visible;
+	}
+	nav ul ul li{
+		border-bottom: 0px;
+	}
+	nav ul ul a{
+		padding-left: 40px;
+		
+	}
+	.active{
+		display: block;
+		color: white;
+		font-size: 18px;
+		padding: 0 20px;
+		line-height: 70px;
+		cursor: pointer;
+	}
+	.active:hover{
+		color: cyan;
+	}
+	.icon{
+		display: block;
+		color: white;
+		position: absolute;
+		right: 40px;
+		line-height: 70px;
+		font-size: 25px;
+		cursor: pointer;
+	}
+	nav ul li a:hover{
+		box-shadow: none;
+		
+	}
+
+.active + a, ul{
+	display: none;
+}
+[id^=btn]:checked + ul{
+	display: block;
+}
+	}
+hr{
+	background: black;
+	border: 1px solid black;
+}
+.site-footer{
+		background-color: black;
+		padding: 45px 0 20px;
+		font-size: 18px;
+		line-height: 24px;
+		color: white;
+		border-radius: 12px;
+		box-shadow: 0 10px 20px;
+		
+		
+	}
+	.site-footer hr{
+		border-top-color: burlywood;
+		opacity: 0.5;
+	}
+	.site-footer hr.small{
+		margin: 20px 0;
+	}
+	.site-footer h6{
+		color: burlywood;
+		font-size: 22px;
+		text-transform: uppercase;
+		margin-top: 5px;
+		letter-spacing: 2px;
+	}
+	.site-footer a{
+		color: white;
+	}
+	.site-footer a:hover{
+		color: cyan;
+		text-decoration: none;
+	}
+	.footer-links{
+		padding: left;
+		list-style: none;
+	}
+	
+	.footer-links a{
+		color: white;
+		font-size: 18px;
+	}
+	
+	.footer-links a:hover,
+	.footer-links a:active,
+	.footer-links a:focus{
+		color: cyan;
+		text-decoration: none;
+	}
+	.footer-links p{
+		color: white;
+		font-size: 18px;
+	}
+	.footer-links p:hover,
+	.footer-links p:active,
+	.footer-links p:focus{
+		color: cyan;
+		text-decoration: none;
+	}
+	
+	
+	.site-footer .socail-icons{
+		text-align: right;
+	}
+	.site-footer .socail-icons a{
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		margin-left: 6px;
+		margin-right: 0;
+		border-radius: 100%;
+		background-color: #33353d;
+	}
+	.copyright-text{
+		margin: 0;
+	}
+	@media (max-width: 991px) {
+		.site-footer [class^="col-"] {
+			margin-bottom: 30px;
+		}
+	}
+	@media (max-width: 767px){
+		.site-footer{
+			padding-bottom: 0;
+		}
+		.site-footer .copyright-text,
+		.site-footer .social-icons {
+			text-align: center;
+		}
+		
+	}
+	.social-icons{
+		padding-left: 0;
+		margin-bottom: 0;
+		list-style: none;
+	}
+	
+	.social-icons a{
+		background-color: #eceeef;
+		color: #818a91;
+		font-size: 22px;
+		display: inline-block;
+		line-height: 48px;
+		width: 48px;
+		height: 48px;
+		text-align: center;
+		margin-right: 8px;
+		border-radius: 100%;
+		-webkit-transition: all 0.2 linear;
+		transition: all 0.2 linear;
+	}
+	.social-icons a:active,
+	.social-icons a:hover,
+	.social-icons a:focus{
+		color: white;
+		background-color: #29aafe;
+	}
+	.social-icons a.facebook:hover{
+		background-color: #3b5998;
+	}
+	.social-icons a.twitter:hover{
+		background-color: #00aced;
+	}
+	.social-icons a.instagram:hover{
+		background-color: #EA4CD0;
+	}
+	.social-icons a.whatsapp:hover{
+		background-color: #1BEC4D;
+	}
+	.social-icons a.gmail:hover{
+		background-color: #D82B2E;
+	}
+			
+	
+	
+	
+	
+	
+	</style>
+
+<body style="background: bisque">
+	 <nav>
+	<div class="logo"><img src="logo.png" alt="logo" class="logo">Historical Monuments</div>
+	  <label for="btn" class="icon">
+	  <span class="fa fa-bars"></span>
+	  </label>
+	  <input type="checkbox" id="btn">
+	  <ul>
+                    <li>
+                        <a href="../home.html">Home <i class="fa fa-home"></i></a>
+                    </li>
+		  <li>
+			  <label for="btn1" class="active">Zone Categories +</label>
+			  
+                        <a href="#"> Zone Categories</a>
+			  <input type="checkbox" id="btn1">
+                        <ul>
+                        
+                        <li>
+                                <a href="../east/east.html">East</a>
+                            </li>
+                            <li>
+                                <a href="west.html">West</a>
+                            </li>
+                            <li>
+                                <a href="../south/south.html">South</a>
+                            </li>
+                            <li>
+                                <a href="../north/north.html">North</a>
+                            </li>
+                        </ul>
+                    </li>
+		  <li>
+                        <a href="../Gallery.html">Gallery <i class="fa fa-image"></i></a>
+                    </li>
+                    
+                   
+                    <li>
+                        <a href="../aboutus.html">About us <i class="fa fa-users"></i></a>
+                    </li>
+                    <li>
+                        <a href="../Contact us.html">Contact us <i class="fa fa-volume-control-phone"></i></a>
+                    </li>
+                    
+                    
+	  </ul>
+	
+	</nav>
+	<br>
+		<hr>
+	<h1 align="center" style="font-family: 'alexa-std'"><i><b>Historical Monuments Of World(West)</b></i></h1>
+	<hr>
+		<br>
+		<br>
+	<!--Cards-->
+		
+		<!--Ist Row Start-->	
+		
+		<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="perro callejero.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Al Perro Callejero</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model1">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder1">Al Perro Callejero</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="perro callejero.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Al Perro Callejero</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Tlalpan, in Mexico City </p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The Monumento al perro callejero (lit. transl. "Monument to the Stray Dog"), also known as Peluso, is an outdoor bronze sculpture installed along Insurgentes Sur Avenue, in the southern borough of Tlalpan, in Mexico City. The statue was unveiled in July 2008 and was dedicated to the free-ranging dogs of the city.
+
+It was sculpted by Girasol Botello and its model was Peluso, a former stray dog that was adopted by Patricia España, founder of Milagros Caninos, a non-governmental dog shelter. The shelter collected money and paid for the sculpture in order to raise awareness about the large population of free-ranging dogs in the city. Since its establishment, the monument has been neglected, vandalized and defaced.</p>
+			
+			<p class="text-justify">Peluso was the name given to a 15-year-old stray dog that España adopted.[6] He had suffered abuse that left him with renal insufficiency, canine distemper, and deafness. Peluso died five days before the inauguration of the monument.
+			The Monumento al perro callejero depicts Peluso, a sad-looking and severely underweight stray dog, thin to the bones, with his tail between his legs and one injured hind leg. The statue is made of bronze, it is 1.3 meters (4.3 ft) high[1] and weighs around 85 kilograms (187 lb).</p>
+
+		
+
+
+		 
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/west.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+			</div>
+		<!--Card 1 Complete-->
+		
+		<!--Card 2nd Started-->
+		
+				<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="hand-of-the-desert chile.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+
+			<h3 align="center">Hand Of The Desert</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model2">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder2">Hand Of The Desert</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="hand-of-the-desert chile.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Hand Of The Desert</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Atacama,Chile</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The Mano del Desierto is a large-scale sculpture of a hand located in the Atacama Desert in Chile, about 60 km to the south and east of the city of Antofagasta, on the Panamerican Highway. The nearest point of reference is the "Ciudad Empresarial La Negra" (La Negra Business City). It lies between the 1309 and 1310 km marker points on the highway. It was created to represent the awful Human Rights Chileans were going through in the past.</p>
+			
+			<p class="text-justify">Chilean sculptor Mario Irarrázabal was asked by the townspeople to create a monument for the vast region of Atacama. And so he created the "Hand of the Desert," protruding starkly from the sand and reaching for the brilliant blue sky.</p>
+			
+
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/west.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+		</div>
+		<!--Card 2 Complete-->
+		
+		<!--card 3 started-->
+					
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="monument to the revolotion mexico.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Revolution Monument</h3>
+			<hr>
+          <p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model3">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder3">Revolution Monument</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="monument to the revolotion mexico.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Revolution Monument</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center"> Mexico City, Mexico</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The Monument to the Revolution (Spanish: Monumento a la Revolución) is a landmark and monument commemorating the Mexican Revolution. It is located in Plaza de la República, near to the heart of the major thoroughfares Paseo de la Reforma and Avenida de los Insurgentes in downtown Mexico City.The building was initially planned as the Federal Legislative Palace during the regime of president Porfirio Díaz and "was intended as the unequaled monument to Porfirian glory." The building would hold the congressional chambers of the deputies and senators, but the project was not finished due to the Mexican Revolutionary War. Twenty-five years later, the structure was converted into a monument to the Mexican Revolution by Mexican architect Carlos Obregón Santacilia.</p>
+			<p class="text-justify">The monument is considered the tallest triumphal arch in the world, standing 67 metres (220 ft) in height. Porfirio Díaz appointed a French architect, Émile Bénard to design and construct the palace, a neoclassical design with "characteristic touches of the French renaissance," showing government officials' aim to demonstrate Mexico's rightful place as an advanced nation. Díaz laid the first stone in 1910 during the centennial celebrations of Independence, when Díaz also inaugurated the Monument to Mexican Independence ("The Angel of Independence"). The internal structure was made of iron, and rather than using local Mexican materials in the stone façade, the design called for Italian marble and Norwegian granite.</p>
+
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/west.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>	
+	</div>
+		
+</div>
+			</div>
+		<!--Card 3 Complete-->
+		
+
+	
+		
+	 <!--Ist row container finish-->
+		<div class="container">
+	<div class="row py-5">
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="colin lenin cuba.png" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Colina Lenin</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Colina Lenin</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="colin lenin cuba.png" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Colina Lenin</h3>	
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Havana, Cuba</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">IN THE CUBAN TOWN OF Regla, one of the twenty municipalities in the province of Havana, lies a monument to the communist revolutionary Vladamir Lenin, the Colina Lenin.
+
+The town gained it’s significance on January 27, 1924, the day of Lenin’s funeral in Moscow, when thousands of local Cuban people gathered on the hill on the outskirts of town to pay tribute to the former soviet leader.</p>
+<p class="text-justify">The events on the hill —formerly called Loma del Fortin — inspired the socialist mayor of Regla, Antonio Bosch, to rename the hill Colina Lenin, and he planted an olive tree to commemorate the late leader. It was the first monument to honor Lenin built outside of the USSR.</p></div>
+		  
+		</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+		  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/west.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+		</div>
+		
+		
+		<!--Card 1 Complete-->
+		
+		<!--Card 2 Started-->
+		
+<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="cuban-friendship-urn cuba.jpg" alt="" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Friendship Urn</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model5">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder5">Friendship Urn</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="cuban-friendship-urn cuba.jpg" alt="" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Friendship Urn</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Washington,D.C </p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The Cuban Friendship Urn, also known as the Cuban–American Friendship Urn or USS Maine Memorial, is a marble statue in Washington, D.C., listed on the National Register of Historic Places. The monument originally stood in Cuba to honor the American deaths aboard the USS Maine during the Spanish–American War in 1898. </p>
+
+<p class="text-justify">It is located on Ohio Drive, Southwest, Washington, D.C., in East Potomac Park, south of the Tidal Basin near the north end of the 14th Street Bridge. Decorations on the 7-foot (2.1 m) tall urn include an eagle with its wings outstretched and human figures depicted in a neoclassical style. It once stood atop a column of marble in Havana, to commemorate the U.S. sailors and Marines who lost their lives aboard the USS Maine when it sank in Havana harbor in 1898, and the friendship and bonds between Cuba and the United States. A Spanish inscription on the urn reads in English translation.
+</p>
+		 
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/west.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+			</div>
+		<!--Card 2 Complete-->
+			<!--card 3 Started-->
+		
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="clock tower colombia.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Clock Tower</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model6">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder6">Clock Tower</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="clock tower colombia.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Clock Tower</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center"> Cartagena, Colombia</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify"> Clock Tower is the main city gate of the historic center of Cartagena de Indias, in Colombia and the original entrance of the fortified city. It is located between the squares Plaza de Independencia and Plaza de los Coches. The name "Puerta del Reloj" responds to the clock with which it was crowned at the beginning of the 18th century. While the name of Boca del Puente is due to the fact that during the colonial period, a drawbridge was raised at the foot of the channel of San Anastasio, which linked the walled city to the legendary Getsemaní neighborhood. In addition the bridge served like defense of the city, since in case of enemy attack, this one was raised to prevent the access of buccaneers and pirates.</p>
+			
+			<p class="text-justify">Also the gate was protected by the bastions of San Pedro Apóstol (now disappeared) and the one of San Juan Bautista.
+</p>
+			
+
+ 	  
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/west.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+			</div>
+			
+		<!--Card 3 Complete-->
+		</div>
+	</div> <!--2nd row container finish-->
+	
+		
+		
+		
+		<div class="container">
+			
+			<div class="row">
+				
+	<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="ds bay.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Discovery Bay</h3>
+			<hr>
+          <p  align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model7">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+		
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model7" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder7">Discovery Bay</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="ds bay.jpg" style= "width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Discovery Bay</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Saint Ann,Jamaica</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">Discovery Bay is a town in Saint Ann Parish on the northern coast of Jamaica. The city is also known locally as Dry Harbour, and gives its name to the Dry Harbour Mountains in St. Ann. There is a dispute as to whether Christopher Columbus first landed in Discovery Bay or Sevilla la Nueva (east of Discovery Bay) in 1494. Near to the city are Puerto Seco Beach and several historic sites, such as the Green Grotto Caves and Columbus Park. Visitors to the Green Grotto Caves can see relics of the native Taíno Arawak lifestyle there. It is said that many Spaniards escaped the English invasion of 1655 through secret passages in the caves with the help of Arawaks and African slaves, in exchange for their freedom.</p>
+			
+<p class="text-justify">The city of Discovery Bay sits on a bay of the same name. The bay was originally named Puerto Seco (Dry Harbour) by Christopher Columbus because, unlike the neighboring Rio Bueno bay, there are no permanent rivers flowing into it. However, groundwater does enter the bay through deep cracks in the basement limestone, especially on the geologic fault line that runs through the ship channel and on the western side. The salinities of the submerged springs are greater than 20 parts per thousand, yet they cause a marked difference in temperature and salinity in the shallow western back reef.
+
+
+</p>
+			
+ 		 
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/west.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+       	
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+		</div> 
+				
+	
+		<!--Card 2 Started-->
+		
+<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="fallen cross brazil.jpg" alt="" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">Fallen Cross</h3>
+          <hr>
+			<p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model8">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model8" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder8">Fallen Cross</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="fallen cross brazil.jpg" alt="" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">Fallen Cross</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Bahia, Brazil</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The place where the Monument of the Fallen Cross is located has a lot of history, with different opinions. This was where the Sé Church was demolished to open space for the streetcar (1933). If you follow the tracks that pass through Chile Street, they will take you right there, to Praça da Cruz Caída. Inaugurated in 1999, the Fallen Cross honors the disappearance of this old Sé Church, the Primatial of Brazil.</p>
+
+<p class="text-justify">The monument was built by the Bahian artist Mário Cravo Júnior (1923 – 2018), is 12m high and makes plastic references to the grandeur and architectural monumentality of the old church. Mário Cravo Júnior was the last living Bahian modernist, nationally and internationally awarded, sculptor, engraver, draftsman and teacher. He is part of the first generation of modernist plastic artists from Bahia, alongside Carlos Bastos and Genaro de Carvalho. Mário Cravo Júnior’s work moves between the most diverse artistic traditions, including ceramics, popular imagination, ex-vows and regional cultural manifestations with which the artist had contact in the numerous trips he made, still very young, in the interior of the Northeast.
+</p>
+		  
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			  <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/west.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button>
+			  
+			  
+       
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+			</div>
+		<!--Card 2 Complete-->
+			<!--card 3 started-->
+					
+		<div class="col-md-4">
+	<div class="card">
+      <div class="thumbnail">  <img src="San_Martín_monument argentina.jpg" style="width: 100%; height: 400%">
+        <div class="caption">
+			<hr>
+			<h3 align="center">San Martin</h3>
+			<hr>
+          <p align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model9">
+  Details
+</button></p>
+        </div>
+      </div>
+    </div>
+			<!--Detail(button) Modal -->
+	
+<div class="modal fade" id="model9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wonder9">San Martin</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <img src="San_Martín_monument argentina.jpg" style="width: 100%; height: 600%">
+		  <hr>
+		  <h3 align="center">San Martin</h3>
+		  <hr>
+		  <h4 align="center">Located</h4>
+		  <p align="center">Neuquén, Argentina</p>
+		  <hr>
+		  <h3 align="center">History</h3>
+        <div>
+		  <p class="text-justify">The General San Martín Monument  located in the city center of Neuquén, Argentina, is a memorial built to commemorate Argentinian general José de San Martín. The monument is constituted by a bronx-made equestrian statue of San Martín, mounted on a pedestal.In 1859, Chile commissioned for Santiago a statue to commemorate José de San Martín to French sculptor Louis-Joseph Daumas, who was specialized in equestrian figures. After becoming aware of the Chilean initiative, the Argentinian government commissioned the same year another statue to Daumas. It was placed on the current Plaza San Martín, in Buenos Aires, and was inaugurated in 1862. Upon the request of different provinces, several replicas of the monument were built and sent from Buenos Aires.</p>
+			<p class="text-justify">After a statue of San Martín was commissioned by Argentina to be placed in the city of Buenos Aires, several provinces of the country requested replicas to be placed on their capital cities. In 1950, the city of Neuquén created a commission to erect the city's monument. The commission resolved to locate the statue on the city center, and hired an Italian company to build the pedestal.
+
+The monument was inaugurated on the city's 50th anniversary, September 12, 1954. In 2014, after repeated acts of vandalism, the structure of the monument was reformed. A waterfall was added to the four sides of the pedestal with a fountain on the bottom to prevent the memorial be painted.</p>
+
+		  
+		</div>
+     
+		  <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="float: left">Close</button>
+			 <button type="button" class="btn btn-primary text-white" style=>
+		   <a href="../pdf files/west.pdf" class="text-white" target="_blank">Download Description </a>
+		  
+		  </button> 
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>	
+	</div>
+		
+</div>
+			</div>
+		<!--Card 3 Complete-->
+	<!--3rd row container finish-->
+	<br>
+	<footer class="site-footer">	
+		<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<h6>About Us</h6>
+				<p class="text-justify">Historical monuments are the cultural heritage of any country.They speak a thousand words about the place, its traditions, and historical significance. Monuments take us to the path of knowing our past and connecting it with the future.
+
+Every country comprises many historical monuments. While some are on the verge of getting destroyed, some are still in their intact form. It mainly depends upon their architectural compliance, grandeur and the way they were made. Today, every country is making efforts to save its historical monuments so that its cultural heritage does not suffer.</p>
+			
+			</div>
+			<div class="col-6 col-md-3">
+			<h6>Designed By:</h6>
+			<div class="footer-links">
+			<p>Qasim Hussain</p>
+			<h6>Contact No:</h6>
+			<p>03112816115</p>
+			<h6>address:</h6>
+			<p>Shah Faisal Colony</p>	
+			
+				
+				
+			
+			</div>
+				</div>
+				
+			
+			<div class="col-6 col-md-3">
+			<h6>Site Map</h6>
+			<div class="footer-links">
+				<a href="../home.html">Home</a><br>
+				
+				<a  href="#"><i class="fa fa-arrow-down"></i> Zone Categories </a><br>
+				
+					<a href="east.html">East</a><br>
+					<a href="../west/west.html">West</a><br>
+					<a href="../south/south.html">South</a><br>
+					<a href="../north/north.html">North</a><br>
+				<br>
+				<a href="../Gallery.html">Gallery</a><br>
+				<a href="#">About Us</a><br>
+				<a href="../Contact us.html">Contact Us</a><br>
+				
+			</div>	
+			</div>
+			</div>
+			<hr class="small">
+		
+		</div>
+		<div class="container">
+		<div class="row">
+		<div class="col-md-8 col-sm-6 col-12">
+		<p class="copyright-text">Copyright &copy; 2021 All Rights Reserved By
+			<a href="#">Historical Monuments</a>
+			</p>	
+			</div>	
+			<div class="col-md-4 col-sm-6 col-12">
+			<div class="social-icons">
+				<a class="facebook" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+				<a class="twitter" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+				<a class="instagram" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+				<a class="whatsapp" href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+				<a class="gmail" href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp"><i class="fa fa-envelope"></i></a>
+				
+				</div>
+			
+			</div>
+			</div>
+		</div>
+		
+		</footer>	
+			
+			
+	
+	
+        
+			
+			
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>				
+</body>
+</html>
